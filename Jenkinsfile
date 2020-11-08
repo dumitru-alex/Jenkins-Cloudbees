@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'timeout 5'
+        sh 'sleep 5'
         sh 'echo Success!'
       }
     }
