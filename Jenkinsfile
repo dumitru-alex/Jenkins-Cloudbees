@@ -4,13 +4,13 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Placeholder'
+        bat 'echo 1 > a.test'
+        archiveArtifacts(artifacts: '*.test', fingerprint: true)
       }
     }
     stage('Test') {
       steps {
         bat 'echo TEST'
-        sh 'sleep 5'
-        sh 'echo Success!'
       }
     }
     stage('Deploy') {
