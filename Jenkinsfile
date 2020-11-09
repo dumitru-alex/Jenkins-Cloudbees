@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Placeholder'
-        sh 'echo PLACEHOLDER'
       }
     }
     stage('Test') {
