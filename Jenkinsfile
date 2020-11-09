@@ -9,8 +9,17 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
-        bat 'echo TEST'
+      parallel {
+        stage('Test A') {
+          steps {
+            echo 'Testing A'
+          }
+        }
+        stage('Test B') {
+          steps {
+            echo 'Testing B'
+          }
+        }
       }
     }
     stage('Deploy') {
