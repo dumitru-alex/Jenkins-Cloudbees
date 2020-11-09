@@ -8,6 +8,7 @@ pipeline {
     }
     stage('Test') {
       steps {
+        bat 'echo TEST'
         sh 'sleep 5'
         sh 'echo Success!'
       }
