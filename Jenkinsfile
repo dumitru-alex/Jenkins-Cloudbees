@@ -2,10 +2,21 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+      post {
+        always {
+          archiveArtifacts(artifacts: '*.test', fingerprint: true)
+
+        }
+
+        success {
+          echo 'DONE!'
+
+        }
+
+      }
       steps {
         echo 'Placeholder'
         bat 'echo 1 > a.test'
-        archiveArtifacts(artifacts: '*.test', fingerprint: true)
       }
     }
     stage('Test') {
