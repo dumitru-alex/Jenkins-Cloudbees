@@ -22,6 +22,11 @@ pipeline {
         }
       }
     }
+    stage('Confirm Deployment') {
+      steps {
+        input(message: 'Do you want to deploy?', ok: 'Go for it!', submitter: 'alex')
+      }
+    }
     stage('Deploy') {
       steps {
         echo 'Placeholder'
